@@ -27,7 +27,8 @@ export async function POST(req: Request) {
     await saveToSupabase(url, summary, summaryUrdu);
 
     return NextResponse.json({ summary, summaryUrdu });
-  } catch {
-    return NextResponse.json({ error: 'Failed to summarize' }, { status: 500 });
+  } catch (error: any) {
+    console.error('Error in summarization API:', error);
+    return NextResponse.json({ error: 'Failed to summarize', details: error.message }, { status: 500 });
   }
 }
