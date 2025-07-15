@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Blog Summarizer",
   description: "A simple blog summarizer with Urdu translation",
+  icons: {
+    icon: "./public/blog.png",
+  },
 };
 
 export default function RootLayout({
